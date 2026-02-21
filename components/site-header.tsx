@@ -11,22 +11,22 @@ const menuItem = [
   {
     id: 1,
     label: "Features",
-    href: "/features",
+    href: "/#features",
   },
   {
     id: 2,
     label: "Pricing",
-    href: "#",
+    href: "/#pricing",
   },
   {
     id: 3,
-    label: "Careers",
-    href: "#",
+    label: "Privacy Policy",
+    href: "/privacy",
   },
   {
     id: 4,
-    label: "Contact Us",
-    href: "#",
+    label: "Terms & Conditions",
+    href: "/terms",
   },
 ];
 
@@ -104,18 +104,6 @@ export function SiteHeader() {
           </Link>
 
           <div className="ml-auto flex h-full items-center">
-            <Link className="mr-6 text-sm" href="/signin">
-              Log in
-            </Link>
-            <Link
-              className={cn(
-                buttonVariants({ variant: "secondary" }),
-                "mr-6 text-sm"
-              )}
-              href="/signup"
-            >
-              Sign up
-            </Link>
           </div>
           <button
             className="ml-6 md:hidden"

@@ -11,7 +11,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { Loader2 } from "lucide-react";
 import * as React from "react";
 import { useForm } from "react-hook-form";
@@ -24,7 +23,7 @@ export const userAuthSchema = z.object({
 });
 type FormData = z.infer<typeof userAuthSchema>;
 
-interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> { }
 
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   const form = useForm<FormData>({
@@ -34,7 +33,6 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     },
   });
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
-  const [isGitHubLoading, setIsGitHubLoading] = React.useState<boolean>(false);
 
   async function onSubmit(data: FormData) {
     setIsLoading(true);
@@ -56,13 +54,6 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     });
   }
 
-  async function onSignInGithub() {
-    setIsGitHubLoading(true);
-    // TODO: Add signin using preferred provider
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setIsGitHubLoading(false);
-  }
-
   return (
     <div className={cn("grid gap-6", className)} {...props}>
       <Form {...form}>
@@ -82,7 +73,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
                       autoCapitalize="none"
                       autoComplete="email"
                       autoCorrect="off"
-                      disabled={isLoading || isGitHubLoading}
+                      disabled={isLoading}
                       {...field}
                     />
                   </FormControl>
@@ -95,7 +86,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
             <button
               type="submit"
               className={cn(buttonVariants())}
-              disabled={isLoading || isGitHubLoading}
+              disabled={isLoading}
               onClick={() => {
                 // onSignIn();
               }}
@@ -106,31 +97,6 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
           </div>
         </form>
       </Form>
-      <div className="relative">
-        <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t" />
-        </div>
-        <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">
-            Or continue with
-          </span>
-        </div>
-      </div>
-      <button
-        type="button"
-        className={cn(buttonVariants({ variant: "outline" }))}
-        onClick={() => {
-          onSignInGithub();
-        }}
-        disabled={isLoading || isGitHubLoading}
-      >
-        {isGitHubLoading ? (
-          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-        ) : (
-          <GitHubLogoIcon className="mr-2 h-4 w-4" />
-        )}{" "}
-        Github
-      </button>
     </div>
   );
 }
