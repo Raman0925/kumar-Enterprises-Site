@@ -9,24 +9,9 @@ import { useEffect, useState } from "react";
 
 const menuItem = [
   {
-    id: 1,
-    label: "Features",
-    href: "/#features",
-  },
-  {
-    id: 2,
-    label: "Pricing",
-    href: "/#pricing",
-  },
-  {
-    id: 3,
-    label: "Privacy Policy",
-    href: "/privacy",
-  },
-  {
-    id: 4,
-    label: "Terms & Conditions",
-    href: "/terms",
+    id: 5,
+    label: "My Work",
+    href: "/mywork",
   },
 ];
 
@@ -99,11 +84,22 @@ export function SiteHeader() {
     <>
       <header className="fixed left-0 top-0 z-50 w-full translate-y-[-1rem] animate-fade-in border-b opacity-0 backdrop-blur-[12px] [--animation-delay:600ms]">
         <div className="container flex h-[3.5rem] items-center justify-between">
-          <Link className="text-md flex items-center" href="/">
-            Kumar Enterprises
-          </Link>
+          <div className="flex items-center gap-6">
+            <Link className="text-md font-bold flex items-center" href="/">
+              Kumar Enterprises
+            </Link>
 
-          <div className="ml-auto flex h-full items-center">
+            <nav className="hidden md:flex items-center gap-6 ml-4">
+              {menuItem.map((item) => (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  className="text-sm font-medium transition-colors hover:text-primary"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
           </div>
           <button
             className="ml-6 md:hidden"
