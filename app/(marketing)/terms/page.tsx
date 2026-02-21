@@ -57,7 +57,7 @@ export default function TermsPage() {
                     <h2 className="text-2xl font-semibold text-white mb-4">6. Limitation of Liability</h2>
                     <p>
                         Kumar Enterprises shall not be liable for any indirect, incidental, or consequential damages resulting from the use or inability to use our applications.
-                        The apps are provided "as-is" without any warranties.
+                        The apps are provided &quot;as-is&quot; without any warranties.
                     </p>
                 </section>
 

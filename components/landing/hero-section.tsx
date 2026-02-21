@@ -7,6 +7,8 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
+import Image from "next/image";
+
 export default function HeroSection() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
@@ -49,14 +51,18 @@ export default function HeroSection() {
             colorTo="var(--color-two)"
           />
 
-          <img
+          <Image
             src="/hero-dark.png"
             alt="Hero Image"
+            width={1280}
+            height={720}
             className="hidden relative w-full h-full rounded-[inherit] border object-contain dark:block"
           />
-          <img
+          <Image
             src="/hero-light.png"
             alt="Hero Image"
+            width={1280}
+            height={720}
             className="block relative w-full h-full  rounded-[inherit] border object-contain dark:hidden"
           />
         </div>

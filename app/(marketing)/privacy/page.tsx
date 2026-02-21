@@ -50,12 +50,12 @@ export default function PrivacyPage() {
                 <section>
                     <h2 className="text-2xl font-semibold text-white mb-4">5. Data Deletion & Account Removal</h2>
                     <p>
-                        In compliance with Google Play's user data policy, we provide a simple way to delete your data.
+                        In compliance with Google Play&apos;s user data policy, we provide a simple way to delete your data.
                         If you wish to delete your account and all associated data, you can:
                     </p>
                     <ul className="list-disc pl-6 space-y-2">
-                        <li>Use the "Delete Account" option within the Application settings.</li>
-                        <li>Send an email to <strong>privacy@kumarenterprises.com</strong> with the subject "Data Deletion Request".</li>
+                        <li>Use the &quot;Delete Account&quot; option within the Application settings.</li>
+                        <li>Send an email to <strong>privacy@kumarenterprises.com</strong> with the subject &quot;Data Deletion Request&quot;.</li>
                     </ul>
                     <p>We will process your request and delete all identifiable personal data within 30 days.</p>
                 </section>

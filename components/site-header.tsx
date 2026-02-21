@@ -104,6 +104,20 @@ export function SiteHeader() {
           </Link>
 
           <div className="ml-auto flex h-full items-center">
+            <nav className="hidden md:block">
+              <ul className="flex items-center gap-6">
+                {menuItem.map((item) => (
+                  <li key={item.id}>
+                    <Link
+                      href={item.href}
+                      className="text-sm font-medium text-gray-400 transition-colors hover:text-white"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
           <button
             className="ml-6 md:hidden"

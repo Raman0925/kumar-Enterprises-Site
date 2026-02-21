@@ -19,7 +19,6 @@ import * as z from "zod";
 
 export const userAuthSchema = z.object({
   email: z.string().email(),
-  password: z.string().optional(),
 });
 type FormData = z.infer<typeof userAuthSchema>;
 
@@ -34,22 +33,15 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   });
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
-  async function onSubmit(data: FormData) {
+  async function onSubmit() {
     setIsLoading(true);
 
     // TODO: Add signin using preferred provider
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    const signInResult = { ok: true };
     setIsLoading(false);
 
-    if (!signInResult?.ok) {
-      return toast.error("Something went wrong.", {
-        description: "Your sign in request failed. Please try again.",
-      });
-    }
-
-    return toast.success("Check your email", {
+    toast.success("Check your email", {
       description: "We sent you a login link. Be sure to check your spam too.",
     });
   }
