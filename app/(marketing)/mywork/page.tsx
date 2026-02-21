@@ -48,7 +48,7 @@ export default function AppsPage() {
                         My Work
                     </h1>
                     <p className="mx-auto max-w-[700px] text-gray-400 md:text-xl text-balance">
-                        A collection of high-performance websites and applications I've developed.
+                        A collection of high-performance websites and applications Iapos;ve developed.
                     </p>
                 </div>
 
