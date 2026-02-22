@@ -12,6 +12,9 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   title: "Kumar Enterprises",
   description: "Expert Web and Mobile App Development. Specializing in Next.js, MERN Stack, React Native, and Kotlin.",
+  verification: {
+    google: "VmsXnExVhm7LSrTBbtjK0k1nIG47QOXEAQZuz58tnlg",
+  },
 };
 
 export default function RootLayout({
